@@ -20,7 +20,7 @@ public class Profesores implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "profAuto")
-	@SequenceGenerator(sequenceName = "profAuto", name = "SQ_PROFESOR", allocationSize = 1)
+	@SequenceGenerator(sequenceName ="profAuto", name = "SQ_PROFESORES", allocationSize = 1)
 	@Column(name = "ID_PROFESOR", columnDefinition = "NUMBER")
 	private int idProfesor;
  
