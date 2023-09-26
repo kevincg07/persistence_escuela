@@ -2,6 +2,8 @@ package com.persistence_escuela.request;
 
 import java.time.LocalDateTime;
 
+import com.persistence_escuela.entity.Carreras;
+
 public class EstudiantesRequest {
 	
 	private int idEstudiante;
@@ -9,7 +11,7 @@ public class EstudiantesRequest {
 	private String telefono;
 	private String email;
 	private LocalDateTime fechaIngreso;
-	private int carrera;
+	private Carreras carrera;
 	private double colegiatura;
 	
 	public EstudiantesRequest() {}
@@ -54,11 +56,11 @@ public class EstudiantesRequest {
 		this.fechaIngreso = fechaIngreso;
 	}
 
-	public int getCarrera() {
+	public Carreras getCarrera() {
 		return carrera;
 	}
 
-	public void setCarrera(int carrera) {
+	public void setCarrera(Carreras carrera) {
 		this.carrera = carrera;
 	}
 

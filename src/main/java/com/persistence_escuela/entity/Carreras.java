@@ -1,12 +1,14 @@
 package com.persistence_escuela.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -29,6 +31,9 @@ public class Carreras implements Serializable{
 	@Column(name = "DURACION", columnDefinition = "NVARCHAR2(25)")
 	private String duracion;
 
+	@OneToMany(mappedBy = "carrera")
+	List<Estudiantes> estudiantes;
+	
 	public int getIdCarrera() {
 		return idCarrera;
 	}

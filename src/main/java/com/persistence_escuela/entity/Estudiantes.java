@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -37,8 +39,9 @@ public class Estudiantes implements Serializable{
 	@Column(name = "FECHA_INGRESO", columnDefinition = "DATE")
 	private LocalDateTime fechaIngreso;
 
-	@Column(name = "CARRERA", columnDefinition = "NUMBER")
-	private int carrera;
+	@ManyToOne
+	@JoinColumn(name = "CARRERA", columnDefinition = "NUMBER")
+	private Carreras carrera;
 
 	@Column(name = "COLEGIATURA", columnDefinition = "NUMBER(6,2)")
 	private double colegiatura;
@@ -87,13 +90,21 @@ public class Estudiantes implements Serializable{
 		this.fechaIngreso = fechaIngreso;
 	}
 
-	public int getCarrera() {
+	public Carreras getCarrera() {
 		return carrera;
 	}
 
-	public void setCarrera(int carrera) {
+	public void setCarrera(Carreras carrera) {
 		this.carrera = carrera;
 	}
+
+//	public List<Pagos> getPagos() {
+//		return pagos;
+//	}
+//
+//	public void setPagos(List<Pagos> pagos) {
+//		this.pagos = pagos;
+//	}
 
 	public double getColegiatura() {
 		return colegiatura;
