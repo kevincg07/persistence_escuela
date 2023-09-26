@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -24,9 +26,10 @@ public class Sueldos  implements Serializable{
 	@SequenceGenerator(name = "sueldosAuto", sequenceName = "SQ_SUELDOS", allocationSize = 1)
 	@Column(name = "ID_PAGO", columnDefinition = "NUMBER")
 	private int idPago;
-//	PROFESOR          NUMBER   
-	@Column(name = "PROFESOR", columnDefinition = "NUMBER")
-	private int profesor;
+//	PROFESOR          NUMBER  
+	@ManyToOne
+	@JoinColumn(name = "PROFESOR", columnDefinition = "NUMBER")
+	private Profesores profesor;
 //	FECHA             DATE   
 	@Column(name = "FECHA", columnDefinition = "DATE")
 	private LocalDateTime fecha;
@@ -39,10 +42,11 @@ public class Sueldos  implements Serializable{
 	public void setIdPago(int idPago) {
 		this.idPago = idPago;
 	}
-	public int getProfesor() {
+	
+	public Profesores getProfesor() {
 		return profesor;
 	}
-	public void setProfesor(int profesor) {
+	public void setProfesor(Profesores profesor) {
 		this.profesor = profesor;
 	}
 	public LocalDateTime getFecha() {
