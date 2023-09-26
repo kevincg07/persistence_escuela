@@ -2,11 +2,13 @@ package com.persistence_escuela.request;
 
 import java.time.LocalDateTime;
 
+import com.persistence_escuela.entity.Profesores;
+
 public class SueldosRequest {
 
   
 	private int idPago;  
-	private int profesor; 
+	private Profesores profesor; 
 	private LocalDateTime fecha;
 	private double monto;
 	
@@ -20,11 +22,11 @@ public class SueldosRequest {
 		this.idPago = idPago;
 	}
 
-	public int getProfesor() {
+	public Profesores getProfesor() {
 		return profesor;
 	}
 
-	public void setProfesor(int profesor) {
+	public void setProfesor(Profesores profesor) {
 		this.profesor = profesor;
 	}
 
